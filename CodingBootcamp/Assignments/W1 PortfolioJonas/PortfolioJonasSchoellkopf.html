@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Jonas Schoellkopf's Portfolio. After studying in
+        the best Hotel School in the world, Jonas moved to the USA to follow his two passions:
+        Sports Therapy and Software Engineering. Discover his unique set of skills!">
+        <title>Portfolio Jonas Schoellkopf</title>
+        <style>
+            .logos {
+                vertical-align: middle; /* doesn't seem to be possible with just HTM */
+                margin-left: 10px;
+            }
+            .formfield * {
+                vertical-align: top; /* couldn't find how to do that with HTML */
+            }
+            table, th, td {
+                border: solid black 2px;
+            }
+            table {
+                border-collapse: collapse; /* single VS double */
+                
+            }
+            td, th {
+                text-align: center;
+                padding: 5px;
+            }
+        </style>
+    </head>
+    <body style="margin:40px">
+        <h1>Jonas Schoellkopf</h1>
+        <div style="margin-left:100px">
+            <img src="profilePicture.jpg" alt="Jonas"
+            height="120" 
+            width="86">
+        </div>
+        <img class="logos" src="github.jpeg" alt="github logo"
+            width="30" 
+            height="30">
+            <a href="https://github.com/jschoellkopf/Pre-Bootcamp-Public">My GitHub</a>
+        <img class="logos" src="linkedin.jpeg" alt="linkedin logo"
+            width="30"
+            height="30">
+            <a href="https://www.linkedin.com/in/jonas-schoellkopf-6700b729/">My LinkedIn</a>
+        <img class="logos" src="email.jpeg" alt="email logo"
+            width="30"
+            height="30">
+            <a href="mailto:j.schoellkopf59.com">My Email</a>
+
+        <h3 style="margin-bottom:5px;">Technologies</h3>
+        <table> <!-- using CSS here because cannot validate code with border="1 (obsolete)"-->   
+            <tr>
+                <th>Front-End</th>
+                <th>Python</th>
+                <th>Javascript</th>
+                <th>Database</th>
+                <th>Concepts</th>
+            </tr>
+            <tr>
+                <td>HTML5</td>
+                <td>Django</td>
+                <td>Express</td>
+                <td>MySQL</td>
+                <td>AJAX</td>
+            </tr>
+            <tr>
+                <td>CSS3</td>
+                <td>Flask</td>
+                <td>Mongoose</td>
+                <td>MongoDB</td>
+                <td>OOP</td>
+            </tr><tr>
+                <td>Bootstrap</td>
+                <td>Unittest</td>
+                <td>React</td>
+                <td></td>
+                <td>REST</td>
+            </tr>        
+        </table><br>
+
+        <h4 style="margin-bottom:0px;">Jonas' other skills:</h4>
+        <ul>
+            <li>Graduated from the best Hotel School in the world, Ecole Hoteliere de Lausanne</li>
+            <li>Trained as a Massage Therapist from one of the top 10 schools in the country</li>
+            <li>Ceritfied as a Personal Trainer and Corrective Exercise Specialist wiht NASM</li>
+        </ul>
+
+        <h3 style="margin-bottom: 5px;">Social Snakes</h3>
+        <img src="emptyTag.png" alt="empty html tag"><br>
+            <label>Social Media App made in Python - <a href="comingSoon.gif">code</a> I <a href="comingSoon.gif">deployed</a></label>
+        <br><br>
+
+        <h3>Contact Me</h3>
+        <form>
+            <div>
+                <label>Name:&nbsp;</label> 
+                    <input type="text" name="name" placeholder="Jane Doe" required>
+                <label>&nbsp;&nbsp;&nbsp;Email:&nbsp;</label> 
+                    <input type="text" name="name" placeholder="janedoe1953@gmail.com" required>
+            </div><br>
+            <div class="formfield">
+                <label for="textarea">Message:&nbsp;</label>
+                <textarea name="message" id="textarea" cols="30" rows="3"></textarea>
+            </div><br>
+            <div>
+                <input type="submit" value="Send Message">
+            </div>
+        </form>
+    </body>
+</html>
