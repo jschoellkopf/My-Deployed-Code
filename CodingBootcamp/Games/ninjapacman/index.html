@@ -1,0 +1,223 @@
+<html>
+    <head>
+        <title> Ninja Man</title>
+        <style type="text/css">
+            *{
+                margin: 0;
+                padding: 0;
+            }
+            .row { /* dots for variable, # for div*/
+                line-height: 0;
+            }
+            .wall {
+                background-color: blue;
+                height: 40px;
+                width: 40px;
+                display: inline-block;
+            }
+            .sushi {
+                background-color: black;
+                background-image: url('sushi.png') ;
+                background-size: contain;
+                height: 40px;
+                width: 40px;
+                display: inline-block;
+            }
+            .onigiri {
+                background-color: black;
+                background-image: url('onigiri.png') ;
+                background-size: contain;
+                height: 40px;
+                width: 40px;
+                display: inline-block;
+            }
+            .blank {
+                background-color: black;
+                height: 40px;
+                width: 40px;
+                display: inline-block;
+            }
+            #ninjaman {
+                background-color: black;
+                background-image: url('ninja.gif') ;
+                background-size: contain;
+                height: 40px;
+                width: 40px;
+                display: inline-block;
+                position: absolute;
+                left: 40px;
+                top: 40px;
+            }
+            #score {
+                background-color: cadetblue;
+                /*I would like to make the background bigger than text */
+                position: absolute;
+                left: 100px
+            }
+            
+        </style>
+    </head>
+    <body>
+        <div id="world"></div>
+        <div id="world2"></div>
+        <div id='ninjaman'></div>
+        <div id="score"></div>
+    </body>
+    <script type="text/javascript">
+        
+        
+        var world = [
+            [1,1,1,1,1,1],
+            [1,0,2,0,1,1],
+            [1,0,1,2,0,1],
+            [1,1,1,3,3,1],
+            [1,0,2,0,1,1],
+            [1,2,1,2,1,1],
+            [1,2,3,0,3,1],
+            [1,1,1,1,1,1],
+        ];
+        
+        
+        function rd(){
+            const d = Math.round(Math.random()*3)
+            console.log(d)
+            return d
+        }    
+
+        var nbrColumns = 10
+        var nbrRows = 10
+        
+        var world2 = [];
+        
+        // creatung the "playable" space
+        for (var x = 0; x < nbrRows;x++){
+            world2.push([1])
+            for (var y = 0; y < nbrColumns;y++){ //maybe create and array and push?
+                var rando = rd();
+                world2[x].push(rando);
+            }
+        }
+        
+        // creating top and bottom walls
+        world2.unshift([1])
+        for (var x = 0; x <= nbrColumns; x++){
+            world2[0].push(1)
+        }
+        
+        //creating bottom wall
+        world2.push([1])
+        for (var x = 0; x <= nbrColumns; x++){
+            world2[nbrRows+1].push(1)
+        }
+        
+        // creating wall on right
+        for (var x = 1; x <= nbrRows;x++){
+                world2[x].push(1);
+        }
+            
+        // to make square under ninja blank at the beginning
+        world2[1][1] = 0
+        
+        console.log(world2)
+        // for in var world
+            
+            
+
+        
+
+        var worldDict = {
+            0: 'blank',
+            1: 'wall',
+            2: 'sushi',
+            3: 'onigiri'
+        }
+
+        function drawWorld (){
+            output = "";
+
+            for(var row = 0; row < world2.length ; row++){
+                output += "<div class = 'row'></div>"
+                for (var x=0; x < world2.length; x++){
+                    output += "<div class = '"+ worldDict[world2[row][x]] +"'></div>"
+                    //console.log("element: ", worldDict[world[row][x]])
+                    //worldDict[world[row][x]] returning a number betw 0 and 2
+                }
+                output += "</div>"
+            }
+
+            document.getElementById('world2').innerHTML = output ;
+        }
+        drawWorld()
+        
+        var numberEaten = 0
+        var scoreBoard = 0
+        
+        function updateScore (){
+            output2 = ' Score = '+scoreBoard+' '
+            document.getElementById("score").innerHTML = output2
+        }
+        updateScore()
+
+        var ninjaman = {
+            x: 1,
+            y: 1
+        }
+
+        function drawNinjaman(){
+            document.getElementById('ninjaman').style.top =
+             ninjaman.y * 40 + 'px'
+            document.getElementById('ninjaman').style.left =
+             ninjaman.x * 40 + 'px'
+        }
+        
+        drawNinjaman()
+
+        document.onkeydown = function(e){
+            console.log(e)
+            // even though the array index starts at '0' it's ok because wall
+            if(e.keyCode == 37){ // left
+                if(world2[ninjaman.y][ninjaman.x-1] != 1) { 
+                    ninjaman.x--;
+                }
+            }
+            if(e.keyCode == 39){ // right
+                if(world2[ninjaman.y][ninjaman.x+1] != 1) {
+                    ninjaman.x++;
+                }
+            }
+            if(e.keyCode == 40){ // down
+                if(world2[ninjaman.y+1][ninjaman.x] != 1) {
+                    ninjaman.y++;
+                }
+            }
+            if(e.keyCode == 38){ // up
+                if(world2[ninjaman.y-1][ninjaman.x] != 1) {
+                    ninjaman.y--;
+                }
+            }
+            
+            if(world2[ninjaman.y][ninjaman.x] == 2 && 3){
+                numberEaten += 1
+            }
+            if(world2[ninjaman.y][ninjaman.x] == 2){
+                scoreBoard += 10
+            }
+            if(world2[ninjaman.y][ninjaman.x] == 3){
+                scoreBoard += 5
+            }
+            
+
+            world2[ninjaman.y][ninjaman.x] = 0;
+            updateScore()
+            drawNinjaman()
+            drawWorld()
+        }
+        // keep score, how many sushis are eaten
+        // sushi = 10pts, onigiri = 5pts
+
+        //adveanced challenge - random world
+
+        // create ghosts that chase you (pumpkins)
+
+    </script>
+</html>
