@@ -1,0 +1,57 @@
+body, h1, a {
+    font-family: Roboto, sans-serif;
+    color: whitesmoke;
+}
+
+h1 {
+    font-weight: 500;
+    font-size: 2em;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* ul {
+    padding: 0;
+    margin: 0; not working either to take away gap on Right
+} */
+
+li::marker {
+    color: rgb(100, 100, 100) ; /* simply hidding them in background, not taking them away */
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(100, 100, 100);
+    color: whitesmoke;
+    height: 50px;
+    padding-left: 20px; /* instead to taking space away to the right of "Sign Out",
+    added space here to the Left*/ 
+    
+}
+
+.nav-links {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 380px;
+    font-size: small;
+    /* margin-right: -10; trying to get rid of space R of "Sign Out", not working */
+}
+
+.active {
+    font-weight: 600;
+}
+
+.btn {
+    background-color: rgb(105, 167, 192);
+    color: whitesmoke;
+    font-size: 1.2em;
+    padding: 2px 5px;
+    border-color: black;
+    box-shadow: black 3px 3px;
+    
+}
