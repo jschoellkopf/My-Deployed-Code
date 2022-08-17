@@ -4,7 +4,6 @@ div {
 
 .row {
     display: flex;
-    justify-content: space-between;
 }
 
 .col, .col-2, .col-3 {
