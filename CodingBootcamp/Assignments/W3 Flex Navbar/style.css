@@ -17,9 +17,10 @@ a {
     margin: 0; not working either to take away gap on Right
 } */
 
-li::marker {
-    color: rgb(100, 100, 100) ; /* simply hidding them in background, not taking them away */
-}
+/* li::marker {
+    color: rgb(100, 100, 100) ; simply hidding them in background, not taking them away 
+} */
+
 
 .nav {
     display: flex;
@@ -39,6 +40,7 @@ li::marker {
     align-items: center;
     width: 380px;
     font-size: small;
+    list-style-type: none;
     /* margin-right: -10; trying to get rid of space R of "Sign Out", not working */
 }
 

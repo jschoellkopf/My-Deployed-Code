@@ -21,3 +21,11 @@ div {
 .col-3 {
     flex: 3;
 }
+
+#noMarginL {
+    margin-left: -10px;
+}
+
+#noMarginR {
+    margin-right: -10px;
+}
