@@ -1,0 +1,52 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Roboto, sans-serif;
+    height: 250px;
+    width: 500px;
+    border: 3px solid gray;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+div {
+    padding: 10px 0;
+}
+
+
+.blueHeader {
+    background-color: rgb(25, 136, 99);
+    width: inherit;
+    height: 40px;
+}
+
+.blueHeader img {
+    border: 4px solid white;
+    border-radius: 50%;
+    height: 60px;
+    position: relative;
+    left: 20px;
+    top: 17px;
+}
+
+.data {
+    padding: 35px 0 0 20px;
+}
+
+.imageAndTextContainer{
+    display: flex;
+    align-items: flex-end;
+    height: 15px;
+}
+
+.imageAndTextContainer img{
+    height: 15px;
+    padding-right: 7px;
+}
+
+.imageAndTextContainer p {
+    white-space: nowrap;
+}
