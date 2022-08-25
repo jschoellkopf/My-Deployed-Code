@@ -8,10 +8,14 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"></head>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"></head> -->
 <body>
+    <!-- NAVBAR-->
     <div class="navBar">
-        <div class="outerMargin"></div>
+        <div class="outerMargin"></div> <!-- using outerMargin and centerColumn for flex, to always have adjustable margin-->
         <div class="centerColumn">
             <h1 class="navTitle">Profile</h1>
             <ul class="navLinks">
@@ -23,11 +27,13 @@
         </div>
         <div class="outerMargin"></div>
     </div>
+        <!-- Content diveded between MAIN and SIDEBAR-->
     <div class="content">
         <div class="outerMargin"></div>    
         <div class="centerColumn">
+            <!-- MAIN starts here, divided between USERCARD and EDUCATION-->
             <div class="main">
-                <div class="userCard">
+                <div class="userCard"> <!--USERCARD-->
                     <div class="cardHeader">
                         <img class="avatarPic" src="./images/jane-m.jpg" alt="jane">
                     </div>
@@ -45,21 +51,95 @@
                         </div>
                     </div>
                 </div>
-                <div class="education">
-                    <div class="sectionHeader">Education</div>
-                    Coding Dojo - Full Stack Bootcamp
-                    Dec 2019 - Mar 2020
-                    Triple black belt in Python, Mern, and C#
-                </div>
-            </div>
-            <div class="sideBarR">
-                <div class="Requests">
+                <div class="education"> <!--EDUCATION-->
                     <div class="sectionHeader">
-                        <p class="nbrOfRequests">2</p>
-                        <p> Connection Requests</p>
+                        Education
+                    </div>
+                    <div class="educationContent">
+                            <h4> Coding Dojo - Full Stack Bootcamp</h4>
+                            <h5 class="grayText"> Dec 2019 - Mar 2020</h5>
+                            <p> Triple black belt in Python, Mern, and C#</p>
                     </div>
                 </div>
-
+            </div>
+            <!-- SIDEBAR starts here, divided between REQUESTS and CONNECTIONS-->
+            <div class="sideBar">
+                <div class="requests"> <!--REQUESTS-->
+                    <div class="sectionHeader">
+                        <div class="nbrOfRequests">2</div>
+                        <div> Connection Requests</div>
+                    </div>
+                    <div class="avatars">
+                        <div class="uniqueAvatars">
+                            <div class="imgAndName">
+                                <div class="imgAndText">
+                                    <img class="avatarPic" src="./images/todd-s.jpg" alt="Todd">
+                                    <p>Todd E</p> 
+                                </div>
+                            </div>
+                            <div class="acceptOrRefuse">
+                                <img class="icon2" src="./icons/accept-circle.png" alt="accept">
+                                <img class="icon2" src="./icons/close-circle.png" alt="refuse">
+                            </div>
+                        </div>
+                        <div class="uniqueAvatars">
+                            <div class="imgAndName">
+                                <div class="imgAndText">
+                                    <img class="avatarPic" src="./images/phil-s.jpg" alt="Todd">
+                                    <p>Phil K</p> 
+                                </div>
+                            </div>
+                            <div class="acceptOrRefuse">
+                                <img class="icon2" src="./icons/accept-circle.png" alt="accept">
+                                <img class="icon2" src="./icons/close-circle.png" alt="refuse">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Start of the second section of the Right Side Bar - CONNECTIONS -->
+                <div class="connections">
+                    <div class="sectionHeader">
+                        <div class="nbrOfRequests">500+</div>
+                        <div>Your Connections</div>
+                    </div>
+                    <div class="avatars">
+                        <div class="uniqueAvatars">
+                            <div class="imgAndName">
+                                <div class="imgAndText">
+                                    <img class="avatarPic" src="./images/adrien-s.jpg" alt="Todd">
+                                    <p>Adrien D</p> 
+                                </div>
+                            </div>
+                        </div>
+                        <div class="uniqueAvatars">
+                            <div class="imgAndName">
+                                <div class="imgAndText">
+                                    <img class="avatarPic" src="./images/anne-s.jpg" alt="Todd">
+                                    <p>Anne J</p> 
+                                </div>
+                            </div>
+                        </div>
+                        <div class="uniqueAvatars">
+                            <div class="imgAndName">
+                                <div class="imgAndText">
+                                    <img class="avatarPic" src="./images/alayne-s.jpg" alt="Todd">
+                                    <p>Alayne T</p> 
+                                </div>
+                            </div>
+                        </div>
+                        <div class="uniqueAvatars">
+                            <div class="imgAndName">
+                                <div class="imgAndText">
+                                    <img class="avatarPic" src="./images/arry-s.jpg" alt="Todd">
+                                    <p>Arry Y</p> 
+                                </div>
+                            </div>
+                        </div>
+                        <div class="viewMore">
+                            <a href="viewMore">View More</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="outerMargin"></div>
