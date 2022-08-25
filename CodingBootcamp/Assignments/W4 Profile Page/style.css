@@ -1,0 +1,132 @@
+* {
+    outline: 1px solid red;
+    font-family: Roboto;
+}
+/* NAVBAR */
+li, a {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-weight: 400;
+}
+
+.navBar {
+    display: flex;
+    background-color: black;
+    color: whitesmoke;
+    height: 60px;
+}
+
+.outerMargin {
+    flex: 1;
+}
+
+.centerColumn {
+    flex: 4;
+    display: flex;
+    align-items: center;
+}
+
+.navLinks {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    list-style-type: none;
+    padding: 0 10px;
+    width: 100%;
+}
+
+li a {
+    color: whitesmoke;
+    text-decoration: none;
+    padding: 0 10px;
+}
+
+button {
+    white-space: nowrap;
+    padding: 3px 10px;
+    background-color: rgb(55, 137, 110);
+    color: whitesmoke;
+    border: none;
+}
+
+.linkSelected {
+    font-weight: 500;
+}
+
+/* MAIN CONTENT */
+.content {
+    display: flex;
+}
+
+.main {
+    flex: 2;
+}
+
+.sideBarR {
+    flex: 1;
+}
+
+/* USER CARD */
+.userCard {
+    margin: 20px 20px 20px 0;
+    border: 3px solid lightgray;
+}
+
+/* CARD HEADER & PIC */
+.cardHeader {
+    background-color: rgb(55, 137, 110);
+    height: 80px;
+}
+
+.avatarPic {
+    height: 80px;
+    border-radius: 50%;
+    border: 2px solid whitesmoke;
+    outline: 2px solid lightgray;
+    margin: 40px 0 0 20px;
+}
+
+/* CARD CONTENT */
+.cardContent {
+    margin-left: 20px;
+}
+.userCard h1 {
+    margin: 0;
+    margin-top: 50px;
+}
+
+.imgAndText {
+    display: flex;
+    align-items: center;
+    height: 40px;
+}
+
+.icon {
+    height: 20px;
+    margin-right: 10px;
+}
+
+.cardContent p {
+    margin: 0;
+}
+
+/* RIGHT SIDE BAR */
+.sectionHeader {
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
+    background-color: rgb(37, 37, 37);
+    color: whitesmoke;
+    height: 40px;
+}
+
+.nbrOfRequests {
+    background-color: darkgray;
+    color: rgb(37, 37, 37);
+    border-radius: 50%;
+    padding: 0 6px;
+    margin-right: 10px;
+}
