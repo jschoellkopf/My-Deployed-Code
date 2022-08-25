@@ -77,6 +77,7 @@ button {
 .userCard {
     margin: 20px 20px 20px 0;
     border: 3px solid lightgray;
+    padding-bottom: 5px;
 }
 
 /* CARD HEADER & PIC */
@@ -86,11 +87,11 @@ button {
 }
 
 .avatarPic {
-    height: 70px;
+    height: 80px;
     border-radius: 50%;
     border: 2px solid whitesmoke;
     outline: 2px solid lightgray;
-    margin: 35px 0 0 20px;
+    margin: 30px 0 0 20px;
 }
 
 /* CARD CONTENT */
@@ -99,7 +100,7 @@ button {
 }
 .userCard h1 {
     margin: 0;
-    margin-top: 50px;
+    margin-top: 45px;
 }
 
 .imgAndText {
