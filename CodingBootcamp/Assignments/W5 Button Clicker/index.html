@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;400;700&display=swap" rel="stylesheet">
+    <script src="index.js" defer></script>
+<body>
+    <!-- NAVBAR-->
+    <div class="navBar">
+        <div class="outerMargin"></div> <!-- using outerMargin and centerColumn for flex, to always have adjustable margin-->
+        <div class="centerColumn">
+            <h1 class="navTitle">Dojonary</h1>
+            <div>
+                <input type="search" name="search" class="search" placeholder="search">
+            </div>
+            <button class="login" onclick="switchToLogout(this)">Login</button>
+        </div>
+        <div class="outerMargin"></div>
+    </div>
+        <!-- Content diveded between MAIN and SIDEBAR-->
+    <div class="content">
+        <div class="outerMargin"></div>    
+        <div class="centerColumn">
+            <!-- MAIN starts here, divided between several ENTRY CARDS -->
+            <div class="main">
+                <div class="entryCard"> <!--ENTRY CARD-->
+                    <div class="cardLeft">
+                        <h1>ninja</h1>
+                        <h3><i>noun</i></h3>
+                        <p>Plural: <i>ninjas</i></p>
+                        <button class="likesButton" onclick="alert('Ninja was liked')">13 likes</button>
+                    </div>
+                    <div class="cardDefinition">
+                        <p>A practitioner skilled in the <a href="japanese">Japanese</a> art of <a href="ninjutsu">ninjutsu</a></p>
+                    </div>
+                </div>
+                <div class="entryCard"> <!-- ENTRYCARD-->
+                    <div class="cardLeft">
+                        <h1>ninja</h1>
+                        <h3><i>noun</i></h3>
+                        <p>Plural: <i>ninjas</i></p>
+                        <button class="likesButton" onclick="alert('Ninja was liked')">37 likes</button>
+                    </div>
+                    <div class="cardDefinition">
+                        <p>A <a href="programmer">programmer</a> who breaks down problems with <a href="zen">zen</a>-like focus</p>
+                    </div>
+                </div>
+            </div>
+            <!-- SIDEBAR starts here-->
+            <div class="sideBar">
+                <div class="addDefinition"> 
+                    <h2>Dojonary is defined by <b>YOU</b></h2>
+                    <button class="addDefBtn" onclick="removeButton(this)">Add Definition</button>
+                </div>
+            </div>
+        </div>
+        <div class="outerMargin"></div>
+    </div>
+</body>
+</html>
