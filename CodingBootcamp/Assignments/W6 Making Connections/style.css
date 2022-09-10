@@ -1,0 +1,210 @@
+* {
+    /* outline: 1px solid red; */
+    font-family: 'Comic Neue';
+    white-space: nowrap;
+}
+/* NAVBAR */
+li, a {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-weight: 400;
+}
+
+.navBar {
+    display: flex;
+    background-color: rgb(37, 37, 37);
+    color: whitesmoke;
+    height: 60px;
+}
+
+.outerMargin {
+    flex: 1;
+}
+
+.centerColumn {
+    flex: 5;
+    display: flex;
+    align-items: center;
+}
+
+.navLinks {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    list-style-type: none;
+    padding: 0 10px;
+    width: 100%;
+}
+
+li a {
+    color: whitesmoke;
+    text-decoration: none;
+    padding: 0 10px;
+}
+
+button {
+    white-space: nowrap;
+    padding: 3px 10px;
+    background-color: rgb(55, 137, 110);
+    color: white;
+    border: none;
+}
+
+.linkSelected {
+    font-weight: 700;
+}
+
+/* MAIN CONTENT */
+.content {
+    display: flex;
+    font-weight: bold;
+}
+
+.main {
+    flex: 2;
+    align-self: flex-start;
+}
+
+.sideBar {
+    flex: 1;
+    align-self: flex-start;
+}
+
+/* USER CARD */
+.userCard {
+    margin: 20px 20px 20px 0;
+    border: 3px solid lightgray;
+    padding-bottom: 5px;
+}
+
+/* CARD HEADER & PIC */
+.cardHeader {
+    background-color: rgb(55, 137, 110);
+    height: 70px;
+}
+
+.avatarPic {
+    height: 80px;
+    border-radius: 50%;
+    border: 2px solid whitesmoke;
+    outline: 2px solid lightgray;
+    margin: 30px 0 0 20px;
+}
+
+/* CARD CONTENT */
+.cardContent {
+    margin-left: 20px;
+}
+.userCard h1 {
+    margin: 0;
+    margin-top: 45px;
+}
+
+.imgAndText {
+    display: flex;
+    align-items: center;
+    height: 40px;
+}
+
+.icon {
+    height: 20px;
+    margin-right: 10px;
+}
+
+.cardContent p {
+    margin: 0;
+}
+
+/* EDUCATION SECTION */
+.education {
+    margin: 20px 20px 20px 0;
+    border: solid 3px lightgray;
+    border-bottom: none;
+}
+
+.educationContent h4,h5,p {
+    padding: 3px 0;
+    margin: 0;
+    margin-left: 20px;
+}
+
+.grayText {
+    color: rgb(108, 108, 108);
+}
+
+.educationContent p {
+    font-size: 0.8em;
+    margin-bottom: 7px;
+}
+
+/* RIGHT SIDE BAR */
+
+/* REQUESTS */
+.requests {
+    border: 3px solid lightgray;
+    margin: 20px 0;
+}
+
+/* HEADERS */
+.sectionHeader {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 10px;
+    background-color: rgb(37, 37, 37);
+    color: whitesmoke;
+    height: 40px;
+    margin-bottom: 10px;
+}
+
+.nbrOfRequests {
+    background-color: darkgray;
+    color: rgb(37, 37, 37);
+    border-radius: 50%;
+    padding: 0 6px;
+    margin-right: 10px;
+}
+
+.nbrOfConnections {
+    background-color: darkgray;
+    color: rgb(37, 37, 37);
+    border-radius: 50%;
+    padding: 0 6px;
+    margin-right: 10px;
+}
+
+
+/* AVARTARS */
+.uniqueAvatars {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.imgAndText .avatarPic {
+    height: 25px;
+    border: 2px solid rgb(37, 37, 37);
+    outline: none;
+    margin: 7px;
+}
+
+.icon2 {
+    height: 25px;
+}
+
+.acceptOrRefuse {
+    height: 25px;
+    margin-right: 10px;
+}
+
+.connections {
+    border: 3px solid lightgray;
+}
+
+.viewMore {
+    border-top: 3px solid lightgray;
+    padding: 7px;
+}
