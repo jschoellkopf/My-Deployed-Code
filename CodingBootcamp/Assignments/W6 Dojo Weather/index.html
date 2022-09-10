@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dojo Weather</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- font "M Plus Rounded 1c" from google fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="navBar">
+            <div class="leftNavBar">
+                <h1>DojoWeather</h1>
+            </div>
+            <ul class="rightNavBar">
+                    <li onclick="loadingWeatherAlert()">Burbank</li>
+                    <li onclick="loadingWeatherAlert()">Chicago</li>
+                    <li onclick="loadingWeatherAlert()">Dallas</li>
+            </ul>
+        </div>
+        <div class="cityHeader">
+            <h2>San Jose</h2>
+            <div class="rightCityHeader">
+                <h5>show temperature in</h5>&nbsp
+                <select onchange="switchTemp()" name="typeOfTemp">
+                    <option>°C</option>
+                    <option>°F</option>
+                </select>
+            </div>
+        </div>
+        <div class="weather4Days">
+            <div class="weatherCard">
+                <h3>Today</h3>
+                <img src="images/some_rain.png" alt="rainy cloud">
+                <h5>some rain</h5>
+                <div class="highAndLowTemp">
+                    <div class="highTemp" id="temperature" >24°</div>
+                    <div class="lowTemp" id="temperature">18°</div>
+                </div>
+            </div>
+            <div class="weatherCard">
+                <h3>Tomorrow</h3>
+                <img src="images/some_sun.png" alt="sun">
+                <h5>some sun</h5>
+                <div class="highAndLowTemp">
+                    <div class="highTemp" id="temperature">27°</div>
+                    <div class="lowTemp" id="temperature">19°</div>
+                </div>
+            </div>
+            <div class="weatherCard">
+                <h3>Friday</h3>
+                <img src="images/some_clouds.png" alt="cloud">
+                <h5>some clouds</h5>
+                <div class="highAndLowTemp">
+                    <div class="highTemp" id="temperature">21°</div>
+                    <div class="lowTemp" id="temperature">16°</div>
+                </div>
+            </div>
+            <div class="weatherCard">
+                <h3>Saturday</h3>
+                <img src="images/some_sun.png" alt="sun">
+                <h5>some sun</h5>
+                <div class="highAndLowTemp">
+                    <div class="highTemp" id="temperature">26°</div>
+                    <div class="lowTemp" id="temperature">21°</div>
+                </div>
+            </div>
+        </div>
+        <div class="cookie">
+            <img class="imgCookie" src="images/cookie.png" alt="cookie">
+            <div class="message">
+                <h4>Stop! Cookkie Time</h4>
+                <h5>We use cookie (sadly not the edible ones) to personalize content and ads, to provide social media features and to analyse our traffic. <a href="#">Read more...</a> </h5>
+            </div>
+            <button onclick="dismissCookie(this)">I Accept</button>
+        </div>
+    </div>
+    
+</body>
+</html>
