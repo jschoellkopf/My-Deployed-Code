@@ -1,5 +1,5 @@
 var requests = 2
-var connections = 349
+var connections = 418
 
 function changeName() {
     document.querySelector("#profileName").innerHTML = "Tori Bakuza"
