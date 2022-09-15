@@ -38,3 +38,29 @@ function CtoF(temp) {
     temp = ((temp*9/5)+32).toFixed(0)
     return temp
 }
+
+/* could have taken ° away from numbers and added it back in css
+#temperature::after {
+    content: "°";
+} 
+then give each temperature a unique id #temp1 through #temp8
+using "this" for the button, to do an if element.value is == to °C 
+function convert(element) {
+    for (var i = 1; i < 9; i++) {
+        var tempSpan = document.querySelector("#temp" + i);
+        var tempVal = parseInt(tempSpan.innerText);
+        if (element.value == "C°") {
+            tempSpan.innerText = f2c(tempVal)
+        } else {
+            tempSpan.innerText = c2f(tempVal)
+        }
+
+    }
+}
+
+function c2f(temp) {
+    return Math.round(9/5*temp+32)
+}
+function f2c(temp) {
+    return Math.round(5/9*(temp-32))
+}
