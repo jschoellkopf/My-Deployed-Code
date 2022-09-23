@@ -5,40 +5,40 @@
     </div>
     
 	<script type="text/javascript">
-	    var leftValue = 450;
-	    var topValue = 100;
-	    var direction = "down"
-	    var alternatingImage = 1
+	var leftValue = 450;
+	var topValue = 100;
+	var direction = "down"
+	var alternatingImage = 1
 
-    	function update(){
-    		document.getElementById("character").style.left = leftValue+"px";
-    		document.getElementById("character").style.top = topValue+"px";
-    		document.getElementById("character").style.backgroundImage = "url('img/"+direction+alternatingImage+".png')";    		
-    	}
+	function update(){
+		document.getElementById("character").style.left = leftValue+"px";
+		document.getElementById("character").style.top = topValue+"px";
+		document.getElementById("character").style.backgroundImage = "url('img/"+direction+alternatingImage+".png')";    		
+	}
 
-    	document.onkeydown = function(e){
-    		console.log(e);
+	document.onkeydown = function(e){
+		console.log(e);
     		if(e.keyCode == 37 && leftValue > 0) { // LEFT
 				leftValue = leftValue - 10;
 				direction = "left"; 
-    		}
+		}
     		else if (e.keyCode == 39 && leftValue < window.innerWidth - 59 && window.innerWidth - 59 - leftValue >= 10) { // RIGHT
 					// adjusting for width of ninja 59px and not moving out of frame when close to it
 					// could simply be leftValue < 500
-    			leftValue = leftValue + 10;	
-    			direction = "right";
-    		}
+			leftValue = leftValue + 10;	
+			direction = "right";
+		}
     		else if (e.keyCode == 40 && topValue < window.innerHeight-86 && window.innerHeight - 86 - topValue >= 10) { // DOWN
 					// adjusting for height of ninja 86px
 					// could also be simply topValue < 500
 				topValue = topValue + 10;
 				direction = "down";
 
-    		}
+		}
     		else if (e.keyCode == 38 && topValue > 0) { // UP
 					topValue = topValue - 10;
-    				direction = "top";
-    		}
+				direction = "top";
+		}
 			
 			if (alternatingImage == 1){
 				alternatingImage = 2;
@@ -53,7 +53,7 @@
 			console.log(alternatingImage)
 			update();
 			
-    	}
+	}
 
     </script>
 

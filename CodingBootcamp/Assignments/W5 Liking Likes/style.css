@@ -61,5 +61,8 @@ button {
     padding: 5px 10px;
     border: 3px solid black;
     box-shadow: 3px 3px black;
+}
 
+button {
+    transition: 500ms;
 }

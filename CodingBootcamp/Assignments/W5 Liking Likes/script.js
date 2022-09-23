@@ -17,3 +17,11 @@ function add1Like3() {
     count3 ++
     likeElement.innerText = count3 + " like(s)"
 }
+
+function scale(element, value, bcolor) {
+    element.style.transform = "scale(" + value + ")";
+    element.style.backgroundColor = bcolor
+}
+
+function change_background(element) {
+}
