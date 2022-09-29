@@ -131,3 +131,5 @@ def bar():
 y = foo()
 print(y)
 #prints 1,3,5,10 - correct
+
+#total 13/15
