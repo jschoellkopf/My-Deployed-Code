@@ -20,21 +20,19 @@ class User:
         if self.is_reward_member == True:
             print("User already a member")
             # return False # not sure why the RETURNS are important here
-            return self
         else:
             self.is_reward_member = True
             self.gold_card_points = 200
             print(self.gold_card_points)
             # return True
-            return self
+        return self
     
     def spend_points(self, amount):
         if amount > self.gold_card_points:
             print(f"You are missing {abs(self.gold_card_points-amount)} point(s) to be able to do that")
-            return self
         else:
             self.gold_card_points -= amount
-            return self
+        return self
 
 bob = User("Bob", "Bakura", "bbakura@gmail.com", 39)
 ling = User("Ling", "Woo", "lwoo@gmail.com", 97)
