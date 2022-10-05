@@ -35,7 +35,7 @@ class Bank_account:
     def all_accounts_info(cls):
         for account in cls.all_accounts:
             print(f"Account's balance is {account.balance} and its interest rate is at {account.int_rate*100}%") #How to add name of account at beginning
-        
+
 
 damians_account = Bank_account(0.01,9463)
 chandels_account = Bank_account(0.015, 54322)
