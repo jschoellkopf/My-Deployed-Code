@@ -61,11 +61,13 @@ class User:
     def __init__(self, first_name, last_name, email, age):
         self.first_name = first_name
         self.last_name = last_name
-        self.account = Bank_account(int_rate = 0.02, balance = 0)
+        #self.account = Bank_account(int_rate = 0.02, balance = 0)
         self.email = email
         self.age = age
         self.is_reward_member = False
         self.gold_card_points = 0
+        self.savings_account = Bank_account(0.01,0)
+        self.checking_account = Bank_account(0.01,0)
 
     def make_deposit(self, amount):
         self.account.deposit(amount)
