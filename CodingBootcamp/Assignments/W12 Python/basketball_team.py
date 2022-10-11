@@ -54,18 +54,19 @@ class Player:
             Player(team_list[i])
         return Player.team
 
-# player_kevin = Player(players[0])
-# player_jason = Player(players[1])
-# player_kyrie = Player(players[2])
+player_kevin = Player(players[0])
+player_jason = Player(players[1])
+player_kyrie = Player(players[2])
 
-# print(player_kevin.position)
-# print(player_jason.age)
-# print(player_kyrie.team)
+print(player_kevin.position)
+print(player_jason.age)
+print(player_kyrie.team)
 
-#new_team = []
-#for i in range(len(players)):
-#    new_player = Player(players[i]) # how do i make an evolving player variable name player1 - 6
-#    new_team.append(new_player)
+new_team = []
+for i in range(len(players)):
+    new_player = Player(players[i]) # how do i make an evolving player variable name player1 - 6
+    
+    new_team.append(new_player)
 
-# print(new_team)
+print(new_team)
 print(Player.get_team(players))
