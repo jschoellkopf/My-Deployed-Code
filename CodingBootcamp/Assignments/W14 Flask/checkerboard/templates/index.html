@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- linking a css style sheet -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Document</title>
+    <style>
+        .c1 {
+            background-color: {{color1}};
+        }
+
+        .c2 {
+            background-color: {{color2}};
+        }
+    </style>
+</head>
+<body>
+    <h1>*** Checkerboard ***</h1>
+    <table>
+        {% for i in range(row) %}
+            <tr></tr>
+                {% for x in range(col) %}
+                    {% if (i+x) % 2 == 0 %}
+                        <td class="c1"></td>
+                    {% else %}
+                        <td class="c2"></td>
+                    {% endif %}
+                {% endfor %}
+        {% endfor %}
+    </table>
+</body>
+</html>
