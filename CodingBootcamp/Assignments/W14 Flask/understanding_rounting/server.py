@@ -26,6 +26,16 @@ def repeat(num,word):
 #       output += f"<p>{word}</p>"
 #   return output
 
+@app.route("/1")
+def instruct():
+    print("talk to database or charge credit card")
+    return redirect("/") #easy option
+
+@app.route("/2")
+def instruct2():
+    print("talk to database or charge credit card")
+    return redirect("/repeat/<int:num>/<string:word>") #can pass values in if need be, can be done with f"string"
+
 @app.route('/<path:path>')
 def catch_all(path):
     # returns a 200 (not a 404) with the following contents:

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hi, {{first_name}}</h1>
+    {% if first_name == 'Tara' %}
+        <h1 style="color:blueviolet">Hello, {{first_name}}</h1>
+    {% elif first_name == 'Harrison' %}
+        <h1 style="color:orange">Hello, {{first_name}}</h1>
+    {% else %}
+        <h1 style="color:turquoise">Hello, {{first_name}}</h1>
+    {% endif %}
+    {# use this for comments #}
+</body>
+</html>
