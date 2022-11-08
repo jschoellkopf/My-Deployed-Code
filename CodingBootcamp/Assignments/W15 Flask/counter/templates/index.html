@@ -1,0 +1,15 @@
+    {% extends 'base.html' %}
+
+    {% block content %}
+        
+    <br/>
+        <h1 class="text-center col-2 my-3 mx-auto">Counter </h1>
+        <h3 class="text-center col-4 my-3 mx-auto">Visited the page {{session['num_reloads']}} time(s) and count is {{session['count']}}</h3>
+        <div class="col-3 d-flex justify-content-between mx-auto">
+            <a href="/+2" class="btn btn-warning">Click +2</a>
+            <a href="/reset" class="btn btn-danger">Reset</a>
+        </div>
+        <form action="/add" method="POST" class="text-center m-4">
+            <input type="text" placeholder="enter number" maxlength="2 class="text-center col-2 my-3 mx-auto name="var_num">
+        </form>
+    {% endblock  %}
