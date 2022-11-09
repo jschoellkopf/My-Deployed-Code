@@ -1,0 +1,39 @@
+    {% extends 'base.html' %}
+
+    {% block content %}
+        
+    <br/>
+        <h1 class="text-center mx-auto">Welcome to the Great Number Game!! </h1>
+        <p class="text-center text-secondary">I am thinking of a number between 1 and 100</p>
+        {% if session['result'] == 'fail' %}
+            <h1 class="text-danger bg-warning text-center p-3 col-7 my-2 mx-auto rounded">YOU LOOSE !!! <br> 
+                the number was {{session['target']}}! <br> Try Again <br>
+                <a href="/reset" class="btn btn-primary m-3">Play Again</a>
+            </h1>
+        {% elif session['result'] == 'high' %}
+            <h1 class="text-light bg-danger text-center p-3 col-6 my-2 mx-auto">Too high, try again...</h1>
+            <div class="col-3 d-flex justify-content-between mx-auto">
+            </div>
+            <form action="/guessed" method="POST" class="text-center text-warning col-3 m-4 bg-dark rounded">
+                <label class="m-2">Take a guess!</label><br>
+                <label class="m-2">You have {{session['limit']-session['count']}} atempt(s) left</label><br>
+                <input type="text" placeholder="enter number" maxlength="2 class="text-center col-3 my-3 mx-auto name="var_num"><br>
+                <input type="submit" value="Guess" class="btn btn-warning text-dark m-2">
+            </form>
+        {% elif session['result'] == 'low' %}
+            <h1 class="text-light bg-danger text-center p-3 col-6 my-2 mx-auto">Too low, try again...</h1>
+            <div class="col-3 d-flex justify-content-between mx-auto">
+            </div>
+            <form action="/guessed" method="POST" class="text-center text-warning col-3 m-4 bg-dark rounded">
+                <label class="m-2">Take a guess!</label><br>
+                <label class="m-2">You have {{session['limit']-session['count']}} atempt(s) left</label><br>
+                <input type="text" placeholder="enter number" maxlength="2 class="text-center col-3 my-3 mx-auto name="var_num"><br>
+                <input type="submit" value="Guess" class="btn btn-warning text-dark m-2">
+            </form>
+            </form>
+        {% elif session['result'] == 'success' %}
+            <h1 class="text-success bg-warning text-center p-3 col-7 my-2 mx-auto rounded">You did it! the number was {{session['target']}}! <br> It took you {{session['count']}} attempt(s) <br>
+                <a href="/reset" class="btn btn-primary m-3">Play Again</a>
+            </h1>
+        {% endif %}
+    {% endblock  %}

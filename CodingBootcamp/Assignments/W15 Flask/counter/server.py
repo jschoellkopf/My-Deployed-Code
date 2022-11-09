@@ -16,12 +16,12 @@ def index():
 
 @app.route('/+2')
 def plus_two():
-    session['count'] += 1
+    session["count"] += 1
     return redirect('/')
 
 @app.route('/add', methods = ["POST"])
 def add_var_num():
-    session['count'] += (int(request.form['var_num'])-1)
+    session["count"] += (int(request.form['var_num'])-1)
     return redirect('/')
 
 @app.route('/reset')

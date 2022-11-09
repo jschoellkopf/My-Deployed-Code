@@ -1,0 +1,16 @@
+    {% extends 'base.html' %}
+
+    {% block content %}
+        
+    <br/>
+    
+            <h1 class="text-center mx-auto">Welcome to the Great Number Game!! </h1>
+            <p class="text-center text-secondary">I am thinking of a number between 1 and 100</p>
+            <form action="/guessed" method="POST" class="text-center text-warning col-3 m-4 bg-dark rounded">
+                <label class="m-2">Take a guess!</label><br>
+                <label class="m-2">You have {{session['limit']-session['count']}} attempt(s) left</label><br>
+                <input type="text" placeholder="enter number" maxlength="2 class="text-center col-3 my-3 mx-auto name="var_num" ><br>
+                <input type="submit" value="Guess" class="btn btn-warning text-dark m-2">
+            </form>
+    
+    {% endblock  %}
