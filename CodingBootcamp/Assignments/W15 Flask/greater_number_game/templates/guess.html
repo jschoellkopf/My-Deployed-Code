@@ -5,6 +5,7 @@
     <br/>
         <h1 class="text-center mx-auto">Welcome to the Great Number Game!! </h1>
         <p class="text-center text-secondary">I am thinking of a number between 1 and 100</p>
+        
         {% if session['result'] == 'fail' %}
             <h1 class="text-danger bg-warning text-center p-3 col-7 my-2 mx-auto rounded">YOU LOOSE !!! <br> 
                 the number was {{session['target']}}! <br> Try Again <br>
@@ -30,10 +31,14 @@
                 <input type="text" placeholder="enter number" maxlength="2 class="text-center col-3 my-3 mx-auto name="var_num"><br>
                 <input type="submit" value="Guess" class="btn btn-warning text-dark m-2">
             </form>
-            </form>
         {% elif session['result'] == 'success' %}
             <h1 class="text-success bg-warning text-center p-3 col-7 my-2 mx-auto rounded">You did it! the number was {{session['target']}}! <br> It took you {{session['count']}} attempt(s) <br>
                 <a href="/reset" class="btn btn-primary m-3">Play Again</a>
+                <form action="/score" method="POST" class="text-center text-warning m-4 bg-dark rounded">
+                    <label class="m-2">Enter your name to be put on the scoreboard</label><br>
+                    <input type="text" placeholder="name" class="text-center col-7 my-3 mx-auto" name="var_name"><br>
+                    <input type="submit" value="Submit" class="btn btn-warning text-dark m-2">
+                </form>
             </h1>
         {% endif %}
     {% endblock  %}

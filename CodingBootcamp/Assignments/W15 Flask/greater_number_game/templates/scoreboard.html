@@ -1,0 +1,25 @@
+    {% extends 'base.html' %}
+    
+    {% block content %}
+        <h1 class="text-center mx-auto">The Great Number Game Scoreboard </h1>
+        <p class="text-center text-secondary">Let's see how lucky you got</p>
+        <h1 class="text-success bg-warning text-center p-3 col-7 my-2 mx-auto rounded">Contrary to other games, scoring low is better<br>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Player Name</th>
+                    <th>Number of attempt(s)</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for player in players_scores %}
+                    <tr>
+                        <td>{{ player[0] | title }}</td>
+                        <td>{{ player[1] }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <a href="/reset" class="btn btn-primary m-3">Play Again</a>
+    
+    {% endblock %}

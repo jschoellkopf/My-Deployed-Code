@@ -1,9 +1,11 @@
 from flask import Flask, render_template, request, redirect, session
+from scoreboard import players_scores
 import random
 # from datetime import datetime
 app = Flask(__name__)  
 
 app.secret_key = "banana"
+
 
 @app.route('/')         
 def index():
@@ -17,25 +19,38 @@ def index():
 
 @app.route('/guessed', methods = ["POST"])
 def guessed():
-    if int(request.form['var_num']) == session['target']: # THIS NEEDS TO HAVE THE PRIORITY OVER THE ATTEMPTS FAILURE
+    if int(request.form['var_num']) == session['target']:
             session['result'] = "success"
             session['count'] += 1
-            return render_template("guess.html")
+            return redirect("/guess")
 
     elif session['count']+1 >= session['limit']:
         session['result'] = 'fail'
-        return render_template("guess.html")
+        return redirect("/guess")
 
     elif int(request.form['var_num']) > session['target']:
         session['result'] = 'high'
         session['count'] += 1
-        return render_template("guess.html")
+        return redirect("/guess")
 
     elif int(request.form['var_num']) < session['target']:
         session['result'] = 'low'
         session['count'] += 1
-        return render_template("guess.html")
-    
+        return redirect("/guess")
+
+@app.route('/guess')
+def guess():
+    return render_template('guess.html')
+
+@app.route('/score', methods = ["POST"])
+def score():
+    players_scores.append([request.form['var_name'],session['count']])
+    print(players_scores)
+    return redirect('/scoreboard')
+
+@app.route('/scoreboard')
+def scoreboard():
+    return render_template('scoreboard.html', players_scores=players_scores)
 
 @app.route('/reset')
 def reset():
