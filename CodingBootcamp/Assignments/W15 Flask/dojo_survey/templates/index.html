@@ -1,0 +1,80 @@
+    {% extends 'base.html' %}
+
+    {% block content %}
+        
+    <br/>
+    <form action="/postresults" method="POST" class="text-warning col-5 m-4 bg-dark rounded">
+        <div class="m-3">
+            <h1 class="text-warning mx-auto">Dojo Survey</h1>
+            <!-- name -->
+            <label class="m-2">Name:</label><br>
+            <input class="form-control" type="text" placeholder="name" name="var_name">
+            
+            <!-- location -->
+            <label class="m-2">Dojo Location:</label><br>
+            <select class="form-select" name="var_location">
+                <option selected>--- Select a Location ---</option>
+                <option value="Burbank">Burbank</option>
+                <option value="Seattle">Seattle</option>
+                <option value="Chicago">Chicago</option>
+                <option value="Online">Online</option>
+                <option value="Bellevue">Bellevue</option>
+            </select>
+
+            <!-- language -->
+            <label class="m-2">Favorite Language:</label><br>
+            <select class="form-select" name="var_language">
+                <option selected>--- Select a Language ---</option>
+                <option value="Python">Python</option>
+                <option value="HTML">HTML</option>
+                <option value="CSS">CSS</option>
+                <option value="Javascript">Javascript</option>
+                <option value="C#">C#</option>
+            </select><br>
+            
+            <!-- checkbox -->
+            <label class="m-2">When do you usually study?</label>
+            <div class="input-group mb-3">
+                <div class="form-check mx-5">
+                    <input class="form-check-input" type="checkbox" name="study_time" value="Morning"/>
+                    <label class="form-check-label">Morning</label>
+                </div>
+                <div class="form-check mx-5">
+                    <input class="form-check-input" type="checkbox" name="study_time" value="Lunch"/>
+                    <label class="form-check-label">Lunch</label>
+                </div>
+                <div class="form-check mx-5">
+                    <input class="form-check-input" type="checkbox" name="study_time" value="Afternoon"/>
+                    <label class="form-check-label">Afternoon</label>
+                </div>
+                <div class="form-check mx-5">
+                    <input class="form-check-input" type="checkbox" name="study_time" value="Evening"/>
+                    <label class="form-check-label">Evening</label>
+                </div>
+            </div>
+            
+            <!-- radio button -->
+            <label class="m-2">What food for the rest of your life?</label><br>
+            <div class="form-check-inline mx-3">
+                <input class="form-check-input" type="radio" name="var_food" value="Pizza"/>
+                <label class="form-check-label"> Pizza </label>
+            </div>
+            <div class="form-check-inline mx-3">
+                <input class="form-check-input" type="radio" name="var_food" value="Burger"/>
+                <label class="form-check-label"> Burger </label>
+            </div>
+            <div class="form-check-inline mx-3">
+                <input class="form-check-input" type="radio" name="var_food" value="Neither"/>
+                <label class="form-check-label"> Neither </label>
+            </div>
+            <br><br>
+
+            <!-- comments -->
+            <label class="m-2">Comments:</label><br>
+            <textarea rows="5" cols="60" name="var_comment" placeholder="Enter text" class="form-control"></textarea><br>
+            <!-- <input type="text" placeholder="type comment" class="form-control" size="height:300px" name="var_comment"><br> -->
+            <input type="submit" value="Submit" class="btn btn-warning text-dark">
+        </div>
+    </form>
+    
+    {% endblock  %}

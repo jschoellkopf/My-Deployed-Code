@@ -1,0 +1,20 @@
+    {% extends 'base.html' %}
+
+    {% block content %}
+        
+    <br/>
+        <div class="col-4 mx-auto bg-secondary rounded text-light p-5 fs-5">
+            <h1 class="text-warning">{{session['name'] | title}}</h1>
+            <label class="m-2 text-decoration-underline">Dojo Location:</label>
+                <label>{{session['location']}}</label><br>
+            <label class="m-2 text-decoration-underline">Favorite Language:</label>
+                <label>{{session['language']}}</label><br>
+            <label class="m-2 text-decoration-underline">Study Time:</label> 
+                <label class="m-2">{{session['study_time']}}</label><br>
+            <label class="m-2 text-decoration-underline">Pizza or Burger:</label>
+                <label>{{session['food']}}</label><br>
+            <label class="m-2 text-decoration-underline">Comment:</label>
+                <label>{{session['comment']}}</label><br>
+            <a href="/" class="m-2 text-warning btn btn-dark">Go Back</a>
+        </div>
+    {% endblock  %}
