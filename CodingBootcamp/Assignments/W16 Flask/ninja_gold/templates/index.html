@@ -1,0 +1,83 @@
+    {% extends 'base.html' %}
+
+    {% block content %}
+        
+    <br/>
+    <h4 class="m-2 text-warning">Your Gold: {{session['gold']}}</h4>
+    
+    <!-- WINNING MECHANISM -->
+    <h5 class="m-2">You have {{session['moves']}} moves to get {{session['target']}} golds, good luck!</h5>
+    <!-- still has moves left -->
+    {% if session['moves']-session['count'] > 0 %}
+        {% if session['gold'] >= session['target'] %}
+            <h6 class="m-2">You Win!</h6>
+        {% else %}    
+            <h6 class="m-2">Moves left {{session['moves']-session['count']}}</h6>
+        {% endif %}
+    <!-- no more moves -->
+    <!-- loose -->
+    {% elif session['moves']-session['count'] == 0 and session['gold'] < session['target'] %}
+        <h6 class="m-2">You loose!</h6>
+    <!-- win -->
+    {% elif session['gold'] >= session['target'] %}
+        <h6 class="m-2">You Win!</h6>
+    {% endif %}
+
+    {% if session['gold'] >= session['target'] or session['count'] == session['moves'] %}
+        <a href="/reset" class="btn btn-dark m-2">Reset</a>
+    {% else %}
+    
+        <div class="d-flex flex-row text-center justify-content-between">
+            <!-- farm -->
+            <div class="m-2 p-3 border border-2 bg-secondary text-light rounded">
+                <h3>Farm</h3><br>
+                <h6>(earns 10-20 golds)</h6><br>
+                <form action="/process_money" method="post" class="text-warning rounded">
+                    <input type="hidden" name="building" value="farm"/>
+                    <input class="btn btn-warning" type="submit" value="Find Gold!"/>
+                </form><br>
+            </div>
+            <!-- cave -->
+            <div class="m-2 p-3 border border-2 bg-secondary text-light rounded">
+                <h3>Cave</h3><br>
+                <h6>(earns 5-10 golds)</h6><br>
+                <form action="/process_money" method="post" class="text-warning rounded">
+                    <input type="hidden" name="building" value="cave"/>
+                    <input class="btn btn-warning" type="submit" value="Find Gold!"/>
+                </form><br>
+            </div>
+            <!-- house -->
+            <div class="m-2 p-3 border border-2 bg-secondary text-light rounded">
+                <h3>House</h3><br>
+                <h6>(earns 2-5 golds)</h6><br>
+                <form action="/process_money" method="post" class="text-warning rounded">
+                    <input type="hidden" name="building" value="house"/>
+                    <input class="btn btn-warning" type="submit" value="Find Gold!"/>
+                </form><br>
+            </div>
+            <!-- casino -->
+            <div class="m-2 p-3 border border-2 bg-secondary text-light rounded">
+                <h3>Casino</h3><br>
+                <h6>(earns/takes 0-50 golds)</h6><br>
+                <form action="/process_money" method="post" class="text-warning rounded">
+                    <input type="hidden" name="building" value="casino"/>
+                    <input class="btn btn-warning rounded" type="submit" value="Find Gold!"/>
+                </form><br>
+            </div>
+        </div>
+        <br>
+        <!-- logs -->
+        <h4 class="m-2">Activities:</h3>
+        <div class="overflow-auto border border-2 rounded m-2 borderbox lh-xs" style="height:200px;">
+            {% for i in session['log']: %}
+                {% if i[1] == "red" %}
+                    <p class="red">{{i[0]}}<br></p>
+                {% else %}
+                    <p class="green">{{i[0]}}<br></p>
+                {% endif %}
+            {% endfor %}
+            </p>
+        </div>
+    {% endif %}
+    
+    {% endblock  %}
