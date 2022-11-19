@@ -9,15 +9,21 @@
                 <th scope="col">Last Name</th>
                 <th scope="col">Email</th>
                 <th scope="col">Created at</th>
+                <th scope="col">Actions</th>
             </tr>
         </thead>
         <tbody>
-            {% for one_user in all_users %}
+            {% for user in users %}
                 <tr>
-                    <td>{{one_user.first_name}}</td>
-                    <td>{{one_user.last_name}}</td>
-                    <td>{{one_user.email}}</td>
-                    <td>{{one_user.created_at}}</td>
+                    <td>{{user.first_name}}</td>
+                    <td>{{user.last_name}}</td>
+                    <td>{{user.email}}</td>
+                    <td>{{user.created_at.strftime("%b %d %Y")}}</td>
+                    <td>
+                        <a href="/user/show/{{user.id}}">Show</a> |
+                        <a href="/user/edit/{{user.id}}">Edit</a> |
+                        <a href="/user/delete/{{user.id}}">Delete</a>
+                    </td>
                 </tr>
             {% endfor %}
 
