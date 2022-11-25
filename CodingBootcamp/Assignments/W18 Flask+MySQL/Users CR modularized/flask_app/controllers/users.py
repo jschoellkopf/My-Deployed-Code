@@ -33,16 +33,33 @@ def edit(id):
 
 @app.route('/user/show/<int:id>')
 def show(id):
+    User.update(request.form)
     data = {
         'id' : id
     }
     return render_template("show_user.html", user = User.get_one(data))
 
-@app.route('/user/update', methods=["POST"])
-def update():
+@app.route('/user/update/<int:id>', methods=["POST"])
+def update(id):
     User.update(request.form)
-    print("hello now")
-    return redirect("/users")
+    
+    # data = {
+    #     'id' : id
+    # }
+    # user = User.get_one(data)
+    # print(user)
+
+    return redirect(f"/user/show/{id}")
+
+# @app.route('/user/update', methods=["POST"])
+# def update():
+#     User.update(request.form)
+#     print("hello now")
+#     data = {
+#         'id' : id
+#     }
+#     user = User.get_one(data)
+#     return redirect(f"/user/show/{user.id}")
 
 @app.route('/user/delete/<int:id>')
 def delete_user(id):

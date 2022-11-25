@@ -6,7 +6,7 @@
         <a class="btn btn-dark" href="/users" role="button">Home</a>
     </div>
 
-    <form class="col-5" action="/user/update" method="POST">
+    <form class="col-5" action="/user/update/{{user.id}}" method="POST">
         <input type="hidden" name="id" value="{{user.id}}">
 
         <div class="mb-3">
