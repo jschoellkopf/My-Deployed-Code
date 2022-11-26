@@ -6,7 +6,7 @@
         <a class="btn btn-dark" href="/users" role="button">Home</a>
     </div>
 
-    <form class="col-5" action="/user/update" method="POST">
+    <form class="col-5" action="/user/update/{{user.id}}" method="POST">
         <input type="hidden" name="id" value="{{user.id}}">
 
         <div class="mb-3">
@@ -22,8 +22,9 @@
             <input type="email" class="form-control" name="email" value="{{user.email}}">
         </div>
         <div class="d-flex align-items-center">
+            <!-- <input class="bg-info mt-2 mb-2" type="submit" value="update"> -->
             <button type="submit" class="btn btn-primary me-3">Update User</button>
-            <a href="/user/show/{{user.id}}" role="button">Show</a>
+            <!-- <a href="/user/show/{{user.id}}" role="button">Show</a> -->
         </div>
 
     </form>

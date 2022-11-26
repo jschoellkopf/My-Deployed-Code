@@ -20,9 +20,11 @@ def create_user():
         "email" : request.form["email"],
     }
     # We pass the data dictionary into the save method from the Friend class.
-    User.save(data)
+    # User.save(data)
     # Don't forget to redirect after saving to the database.
-    return redirect('/users')
+
+    #User.save(date) returns ID from mysqlconnection whne insert
+    return redirect(f'/user/show/{User.save(data)}')
 
 @app.route('/user/edit/<int:id>')
 def edit(id):
@@ -33,7 +35,6 @@ def edit(id):
 
 @app.route('/user/show/<int:id>')
 def show(id):
-    User.update(request.form)
     data = {
         'id' : id
     }
@@ -42,13 +43,6 @@ def show(id):
 @app.route('/user/update/<int:id>', methods=["POST"])
 def update(id):
     User.update(request.form)
-    
-    # data = {
-    #     'id' : id
-    # }
-    # user = User.get_one(data)
-    # print(user)
-
     return redirect(f"/user/show/{id}")
 
 # @app.route('/user/update', methods=["POST"])

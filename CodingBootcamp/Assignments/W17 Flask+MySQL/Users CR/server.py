@@ -47,11 +47,10 @@ def show(id):
     }
     return render_template("show_user.html", user = User.get_one(data))
 
-@app.route('/user/update', methods=["POST"])
-def update():
+@app.route('/user/update/<int:id>', methods=["POST"])
+def update(id):
     User.update(request.form)
-    print("hello now")
-    return redirect("/users")
+    return redirect(f"/user/show/{id}")
 
 @app.route('/user/delete/<int:id>')
 def delete_user(id):
