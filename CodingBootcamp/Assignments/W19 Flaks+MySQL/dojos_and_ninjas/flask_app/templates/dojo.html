@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
+    <title>New Ninja</title>
+</head>
+<body class="d-flex justify-content-center">
+    <div class="col-7 text-center m-4">
+        <h2>{{dojo.name}} Ninjas</h2>
+        <table class="table table-dark rounded">
+            <thead>
+                <tr>
+                    <th scope="col">First Name</th>
+                    <th scope="col">Last Name</th>
+                    <th scope="col">Age</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for ninja in all_ninjas %}
+                    <tr>
+                        <td>{{ninja.first_name}}</td>
+                        <td>{{ninja.last_name}}</td>
+                        <td>{{ninja.age}}</td>
+                        <td>
+                            <a href="/user/edit/{{ninja.id}}/{{dojo.id}}">Edit</a> |  <!-- giving dojo.id to be able to come back to same dojo but has to be modified to dojo_num because dojo_id already exists-->
+                            <a href="/user/delete/{{ninja.id}}/{{dojo.id}}">Delete</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+    
+            </tbody>
+        </table>
+        <a href="/dojos">Home</a>
+    </div>
+</body>
+</html>

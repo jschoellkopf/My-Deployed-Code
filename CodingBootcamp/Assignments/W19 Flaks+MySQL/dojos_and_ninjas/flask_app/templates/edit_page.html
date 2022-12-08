@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
+    <title>Edit Ninja</title>
+</head>
+<body>
+    <form action="/update/{{ninja['id']}}" method="post" class="p-3 col-4 mx-auto my-5 bg-dark text-light">
+        <div class="form-group">
+            <label for="dojo_id">Dojo:</label>
+            <select name="dojo_id" id="dojo_id" class="form-control">
+                <!-- Need to create an option list for the user to select a restaurant. -->
+                <!-- Note that we are passing the restaurant id into the value -->
+                {% for dojo in all_dojos %}
+                <option value={{dojo.id}}>{{dojo.name}}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="first_name">Ninja Name:</label>
+            <input type="text" name="first_name" id="first_name" class="form-control" value="{{ninja['first_name']}}">
+        </div>
+        <div class="form-group">
+            <label for="last_name">Last_name:</label>
+            <input type="text" name="last_name" id="last_name" class="form-control" value="{{ninja['last_name']}}">
+        </div>
+        <div class="form-group">
+            <label for="age">Age:</label>
+            <input type="text" name="age" id="age" class="form-control" value="{{ninja['age']}}">
+        </div>
+        <input type="submit" value="Update Ninja" class="btn btn-primary btn-outline-dark">
+    </form>
+    <p class="text-center"><a href="/dojo/{{dojo_num}}">Back to Dojo</a></p>
+</body>
+</html>
