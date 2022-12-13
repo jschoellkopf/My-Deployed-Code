@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
+    <title>Book</title>
+</head>
+<body>
+    <div class="d-flex justify-content-center m-4">
+        <!-- display all auhtors who have the book as favorite -->
+        <div class="p-4 m-2 bg-dark text-light w-25">
+            <h2 class="text-center text-light">Title: {{book.title}}</h2>
+            <div>
+                <p>Favorited by:</p>
+                {% for author in book.authors_who_favorited %}
+                <a value={{author.id}}>{{author.name}}</a><br>
+                {% endfor %}
+            </div>
+            
+        </div>
+        <!-- add author's favorite book-->
+        <form action="/add_author_favorite" method="post" class="bg-dark text-light p-4 m-2 w-25">
+            <h2 class="text-center text-primary">Add Author Who Loves This Book:</h2>
+            <input type="hidden" name="book_id" value="{{book.id}}">
+            <div class="form-group">
+                <label for="author_id">Author:</label>
+                <select name="author_id" id="author_id" class="form-control">
+                    {% for author in unfavorited_authors %}
+                    <option value={{author.id}}>{{author.name}}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            
+            <input type="submit" value="Add" class="btn btn-primary btn-outline-dark">
+        </form>
+    </div>
+    <!-- all_books link -->
+    <p class="text-center"><a href="/all_books">Add Book</a></p>
+        
+</body>
+</html>

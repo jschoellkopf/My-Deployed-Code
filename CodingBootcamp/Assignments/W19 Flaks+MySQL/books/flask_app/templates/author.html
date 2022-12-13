@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
+    <title>Author</title>
+</head>
+<body>
+    <div class="d-flex justify-content-center m-4">
+        <!-- display all auhtor's favorite books -->
+        <div class="p-4 m-2 bg-dark text-light w-25">
+            <h2 class="text-center text-light">{{author.name}}'s favoites</h2>
+            <div>
+                {% for book in author.favorite_books %}
+                <a value={{book.id}}>{{book.title}}</a><br>
+                {% endfor %}
+            </div>
+            
+        </div>
+        <!-- add author's favorite book-->
+        <form action="/add_book_favorite" method="post" class="bg-dark text-light p-4 m-2 w-25">
+            <h2 class="text-center text-primary">Add Author's Favorite:</h2>
+            <input type="hidden" name="author_id" value="{{author.id}}">
+            <div class="form-group">
+                <label for="book_id">Book:</label>
+                <select name="book_id" id="book_id" class="form-control">
+                    <!-- Need to create an option list for the user to select a book. -->
+                    <!-- Note that we are passing the book id into the value -->
+                    {% for book in all_books %}
+                    <option value={{book.id}}>{{book.title}}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            
+            <input type="submit" value="Add" class="btn btn-primary btn-outline-dark">
+        </form>
+    </div>
+    <!-- all_books link -->
+    <p class="text-center"><a href="/all_books">Add Book</a></p>
+        
+</body>
+</html>
