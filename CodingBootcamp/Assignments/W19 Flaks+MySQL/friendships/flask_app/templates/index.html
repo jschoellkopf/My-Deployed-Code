@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
+    <title>Author</title>
+</head>
+<body>
+    <div class="d-flex justify-content-center m-4">
+        <!-- display all auhtor's favorite books -->
+        <div class="p-4 m-2 bg-dark text-light w-25">
+            <h2 class="text-center text-light">Friendships</h2>
+            <div class="d-flex justify-content-center">
+                <div class="m-1">
+                    <h5>user 1</h5>
+                    {% for user in users %}
+                    <a value={{user.id}}>{{user.first_name}} {{user.last_name}}</a><br>
+                    {% endfor %}
+                </div>
+                <div class="m-1">
+                    <h5>user 2</h5>
+                    {% for friend in friends %}
+                    <a value={{friend.id}}>{{friend.first_name}} {{friend.last_name}}</a><br>
+                    {% endfor %}
+                </div>
+            </div>
+
+        
+        </div>
+        <div class="bg-dark text-light">
+            <form action="/add_user" method="post" class="bg-dark text-light p-4 m-2">
+                <h2 class="text-center text-primary">Add User</h2>
+                <div class="form-group">
+                    <label for="first_name">First Name:</label>
+                    <input type="text" name="first_name" id="first_name" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="last_name">Last Name:</label>
+                    <input type="text" name="last_name" id="last_name" class="form-control">
+                </div>
+                
+                <input type="submit" value="Add" class="btn btn-primary btn-outline-dark">
+            </form>
+
+            <form action="/add_friendship" method="post" class="bg-dark text-light p-4 m-2">
+                <h2 class="text-center text-primary">Create Friendship:</h2>
+                <div class="form-group">
+                    <label for="user_id">User:</label>
+                    <select name="user_id" id="user_id" class="form-control">
+                        {% for user in all_users %}
+                        <option value={{user.id}}>{{user.first_name}} {{user.last_name}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="friend_id">Friend:</label>
+                    <select name="friend_id" id="friend_id" class="form-control">
+                        {% for user in all_users %}
+                        <option value={{user.id}}>{{user.first_name}} {{user.last_name}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                
+                <input type="submit" value="Add" class="btn btn-primary btn-outline-dark">
+            </form>
+            
+        </div>
+        
+    </div>
+    
+        
+</body>
+</html>
