@@ -1,0 +1,48 @@
+    {% extends 'base.html' %}
+
+    {% block content %}
+        <form class="col-5" action="/create_user" method="POST">
+            
+            <div class="d-flex flex-row justify-content-between align-items-center">
+                <h1>Add User</h1>
+                <a class="btn btn-dark" href="/users" role="button">Home</a>
+            </div>
+            
+            <div>
+                <label for="first_name" class="form-label">First Name</label>
+                <input type="text" class="form-control" name="first_name" value="{{session['first_name']}}">
+                {% with messages = get_flashed_messages(category_filter='first_name') %}     
+                    {% if messages %}                            
+                        {% for message in messages %}            
+                            <p class="alert alert-danger p-1">{{message}}</p>                   
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+            </div><br>
+            <div class="mb-3">
+                <label for="last_name" class="form-label">Last Name</label>
+                <input type="text" class="form-control" name="last_name" value="{{session['last_name']}}">
+                {% with messages = get_flashed_messages(category_filter='last_name') %}     
+                    {% if messages %}                            
+                        {% for message in messages %}            
+                            <p class="alert alert-danger p-1">{{message}}</p>                   
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email Address</label>
+                <input type="email" class="form-control" name="email" value="{{session['email']}}">
+                {% with messages = get_flashed_messages(category_filter='email') %}     
+                    {% if messages %}                            
+                        {% for message in messages %}            
+                            <p class="alert alert-danger p-1">{{message}}</p>                   
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+            </div>
+            <button type="submit" class="btn btn-primary mb-4">Create</button> <br>
+        </form>
+
+    
+    {% endblock  %}

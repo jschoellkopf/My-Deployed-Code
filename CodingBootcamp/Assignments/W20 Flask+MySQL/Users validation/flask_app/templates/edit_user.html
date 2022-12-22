@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="col-5 d-flex justify-content-between align-items-center">
+        <h1>Edit {{user.first_name}}</h1>
+        <a class="btn btn-dark" href="/users" role="button">Home</a>
+    </div>
+
+    <form class="col-5" action="/user/update/{{ user.id }}" method="POST">
+        <input type="hidden" name="id" value="{{user.id}}">
+
+        <div class="mb-3">
+            <label for="first_name" class="form-label">First Name</label>
+            <input type="text" class="form-control" name="first_name" value="{{user.first_name}}">
+        </div>
+        <div class="mb-3">
+            <label for="last_name" class="form-label">Last Name</label>
+            <input type="text" class="form-control" name="last_name" value="{{user.last_name}}">
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">Email Address</label>
+            <input type="email" class="form-control" name="email" value="{{user.email}}">
+        </div>
+        <div class="d-flex align-items-center">
+            <button type="submit" class="btn btn-primary me-3">Update User</button>
+            <a href="/user/show/{{user.id}}" role="button">Show</a>
+        </div>
+
+    </form>
+
+
+{% endblock  %}
