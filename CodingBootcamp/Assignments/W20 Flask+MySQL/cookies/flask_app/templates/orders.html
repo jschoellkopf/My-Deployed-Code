@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1 class="align-self-start">Cookie Orders</h1><br>
+    <div class="container d-flex justify-content-between mb-1">
+        <h3>All Orders</h3>
+        <h3><a href="/new/order">+ New Order</a></h3>
+    </div>
+    <table class="table table-dark rounded">
+        <thead>
+            <tr>
+                <th scope="col">Customer Name</th>
+                <th scope="col">Cookie Type</th>
+                <th scope="col">Number of Boxes</th>
+                <!-- <th scope="col">Created at</th> -->
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for order in orders %}
+                <tr>
+                    <td>{{order.name}}</td>
+                    <td>{{order.type}}</td>
+                    <td>{{order.amount}}</td>
+                    <!-- <td>{{order.created_at.strftime("%b %d %Y")}}</td> -->
+                    <td>
+                        <a href="/order/edit/{{order.id}}">Edit</a> |
+                        <a href="/order/delete/{{order.id}}">Delete</a>
+                    </td>
+                </tr>
+            {% endfor %}
+
+        </tbody>
+    </table>
+{% endblock %}
