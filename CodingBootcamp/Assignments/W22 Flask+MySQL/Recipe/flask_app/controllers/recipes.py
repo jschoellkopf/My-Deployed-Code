@@ -8,7 +8,7 @@ from flask_app.models.recipe import Recipe
 @app.route("/create_recipe")
 def create_recipe():
     if "user_id" not in session:
-        redirect('/')
+        return redirect('/')
     data = {
         "id" : session['user_id']
     }
@@ -17,7 +17,7 @@ def create_recipe():
 @app.route("/view_recipe/<int:id>")
 def view_recipe(id):
     if "user_id" not in session:
-        redirect('/')
+        return redirect('/')
     data = {
         "id" : session['user_id']
     }
@@ -51,7 +51,7 @@ def delete_recipe(id):
 @app.route('/edit_recipe/<int:id>')
 def edit_recipe(id):
     if "user_id" not in session:
-        redirect('/')
+        return redirect('/')
     data = {
         "id" : id
     }

@@ -18,7 +18,7 @@ def logout():
 @app.route("/recipes")
 def recipes():
     if "user_id" not in session:
-        redirect('/')
+        return redirect('/')
     data = {
         "id" : session['user_id']
     }
