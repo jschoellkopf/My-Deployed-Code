@@ -41,7 +41,7 @@
 
                     {% for one_comment in all_comments %}
                         {% if one_comment.post_id == one_post.id %}
-                            <p class="text-light bg-secondary" style="font-size: 0.7em;" >{{one_post.user.first_name}} commented {{one_comment.comment}}</p>
+                            <p class="text-light bg-secondary" style="font-size: 0.7em;" >{{one_post.user.first_name}} commented "{{one_comment.comment}}"</p>
                         {% endif %}
                     {% endfor %}   
                         <form action="/create_comment" method="POST" class="d-flex flew-row col-8 justify-content-evenly">
