@@ -36,3 +36,10 @@ print(tower_builder(5))
 
 # def tower_builder(n):
 #     return [("*" * (i*2-1)).center(n*2-1) for i in range(1, n+1)]
+
+# def tower_builder(n_floors):
+#     tower = []
+#     for n in range(1,n_floors+1):
+#         tower.append(f"{(n_floors-n)*' '}{(n-1)*'*'}*{(n-1)*'*'}{(n_floors-n)*' '}")
+#     return tower
+# second attempt with Harrison
