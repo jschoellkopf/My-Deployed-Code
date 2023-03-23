@@ -1,7 +1,6 @@
 def count(s):
     count = {}
     for c in s:
-        print(c)
         if c in count:
             count[c] += 1
         else:
@@ -23,7 +22,6 @@ print(count('ababba'))
 
 
 # def count(string):
-  
 #     return {i: string.count(i) for i in string}
 
 

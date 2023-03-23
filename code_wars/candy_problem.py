@@ -37,3 +37,6 @@ print(candies([4,2]))
 
 # def candies(s):
 #     return sum([max(s) - x for x in s]) if len(s) > 1 else -1
+
+# def candies(s):
+#     return max(s) * len(s) - sum(s) if len(s) > 1 else -1
