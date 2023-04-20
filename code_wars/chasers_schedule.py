@@ -75,22 +75,22 @@ print(solution(10,7))
 # speed is 5 time is 7
 # 5 + 5 + 5 + 5 + 5 + 10 + 4 + 8 + 3 + 6
 
-def solution(s, t):
-    n = min((t-1)//2, s//3)
-    return t*s + (n+1)*s - 3*(n+1)*n//2 if t else 0
+# def solution(s, t):
+#     n = min((t-1)//2, s//3)
+#     return t*s + (n+1)*s - 3*(n+1)*n//2 if t else 0
 
 
-def solution(s,t):
-    return max(run(s,t),sprint(s,t))
+# def solution(s,t):
+#     return max(run(s,t),sprint(s,t))
 
-def run(s,t):
-    return 0 if s<=0 or t<=0 else max(s+run(s,t-1), s*2 if t==1 else s*3-1+sprint(s-1,t-2))
+# def run(s,t):
+#     return 0 if s<=0 or t<=0 else max(s+run(s,t-1), s*2 if t==1 else s*3-1+sprint(s-1,t-2))
 
-def sprint(s,t):
-    return 0 if s<=0 or t<=0 else s*2 if t==1 else s*3-1+sprint(s-1,t-2)
+# def sprint(s,t):
+#     return 0 if s<=0 or t<=0 else s*2 if t==1 else s*3-1+sprint(s-1,t-2)
 
-def solution(s,t):
-    trade_off = s//3
-    best_n_rs = min((t-1)//2, trade_off) # trade off must be less than max available slots
-    d = lambda n: s*t+s*(n+1)-3/2*n*(n+1)
-    return d(best_n_rs)
+# def solution(s,t):
+#     trade_off = s//3
+#     best_n_rs = min((t-1)//2, trade_off) # trade off must be less than max available slots
+#     d = lambda n: s*t+s*(n+1)-3/2*n*(n+1)
+#     return d(best_n_rs)
